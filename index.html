@@ -24,10 +24,10 @@
 
   import "./dist/myuw-search.mjs";
 
-  cssVars({shadowDOM: true,watch: true});
-
-  document.addEventListener('WebComponentsReady', function() {
-    var customEvent = new CustomEvent('myuw-login', {
+  cssVars({ shadowDOM: true, watch: true });
+  var updateSearchBtn=document.getElementById("update-search-btn");
+  document.addEventListener('WebComponentsReady', function () {
+    var customEvent=new CustomEvent('myuw-login', {
       bubbles: true, // optional
       detail: { // required always
         person: { // required for generic session display
@@ -40,20 +40,21 @@
   });
 
   // Add a callback to the serach component
-  document.body.addEventListener('myuw-search', function(event) {
-    var value = event.detail.value;
-    var label = document.getElementById('searchLabel');
-    var searchValue = document.getElementById('searchValue');
-    label.innerText = 'You searched for: ';
-    searchValue.innerText = '"' + value + '"';
+  document.body.addEventListener('myuw-search', function (event) {
+    var value=event.detail.value;
+    var label=document.getElementById('searchLabel');
+    var searchValue=document.getElementById('searchValue');
+    label.innerText='You searched for: ';
+    searchValue.innerText='"'+value+'"';
   }, false);
 
-  function updateSearchBar() {
+  // Update search component parameters
+  updateSearchBtn.addEventListener('click', e => {
     // Get all elements
-    var searchBar = document.getElementsByTagName('myuw-search')[0];
-    var ariaLabel = document.getElementById('searchAriaLabel');
-    var placeholder = document.getElementById('searchPlaceholder');
-    var icon = document.getElementById('searchIcon');
+    var searchBar=document.getElementsByTagName('myuw-search')[0];
+    var ariaLabel=document.getElementById('searchAriaLabel');
+    var placeholder=document.getElementById('searchPlaceholder');
+    var icon=document.getElementById('searchIcon');
     // Update populated fields
     if (ariaLabel.value) {
       searchBar.setAttribute('button-label', ariaLabel.value);
@@ -64,7 +65,7 @@
     if (icon.value) {
       searchBar.setAttribute('icon', icon.value);
     }
-  }
+  });
 
 </script>
 
@@ -78,6 +79,7 @@
     font-family: var(--myuw-font, 'Roboto', 'Arial', sans-serif);
     font-size: 16px;
   }
+
   .test-content button {
     min-width: 48px;
     min-height: 24px;
@@ -91,13 +93,16 @@
     color: var(--myuw-accent-color);
     outline: none;
   }
+
   .test-content button:hover {
     background: #046085;
     cursor: pointer;
   }
+
   #searchValue {
     font-size: 30px;
   }
+
   .test-content form {
     display: flex;
     flex-direction: column;
@@ -105,6 +110,7 @@
     max-width: 500px;
     align-items: flex-start;
   }
+
   .test-content form .form-control {
     margin: 8px 0;
     display: flex;
@@ -112,6 +118,7 @@
     justify-content: space-between;
     width: 100%;
   }
+
   .test-content label {
     font-size: 16px;
     margin-right: 12px;
@@ -120,6 +127,7 @@
     align-content: center;
     line-height: 24px;
   }
+
   .test-content input {
     height: 36px;
     border-radius: 5px;
@@ -131,53 +139,26 @@
   }
 </style>
 
-<myuw-app-bar
-  role="toolbar"
-  theme-name="MyUW"
-  theme-url="https://my.wisc.edu"
-  app-name="Search Demo"
->
+<myuw-app-bar role="toolbar" theme-name="MyUW" theme-url="https://my.wisc.edu" app-name="Search Demo">
   <myuw-drawer slot="myuw-navigation">
-    <myuw-drawer-link
-      slot="myuw-drawer-links"
-      name="MyUW home"
-      icon="mail"
-      href="http://google.com"
-    ></myuw-drawer-link>
-    <myuw-drawer-link
-      slot="myuw-drawer-links"
-      name="Browse apps"
-      icon="explore"
-      href="http://google.com"
-    ></myuw-drawer-link>
+    <myuw-drawer-link slot="myuw-drawer-links" name="MyUW home" icon="mail" href="http://google.com"></myuw-drawer-link>
+    <myuw-drawer-link slot="myuw-drawer-links" name="Browse apps" icon="explore" href="http://google.com">
+    </myuw-drawer-link>
   </myuw-drawer>
-  <myuw-search
-    id="search"
-    slot="myuw-search"
-    icon="search"
-    input-label="Search the demo"
-    button-label="Submit the search"
-  ></myuw-search>
-  <myuw-help
-    slot="myuw-help"
-    myuw-help-title="Get help"
-    show-button
-    show-default-content
-  ></myuw-help>
+  <myuw-search id="search" slot="myuw-search" icon="search" input-label="Search the demo"
+    button-label="Submit the search"></myuw-search>
+  <myuw-help slot="myuw-help" myuw-help-title="Get help" show-button show-default-content></myuw-help>
   <myuw-notifications slot="myuw-notifications"></myuw-notifications>
-  <myuw-profile
-    slot="myuw-profile"
-    login-url="/"
-    logout-url="/"
-    background-color=""
-  ></myuw-profile>
+  <myuw-profile slot="myuw-profile" login-url="/" logout-url="/" background-color=""></myuw-profile>
 </myuw-app-bar>
 
 <div class="demo__container">
   <div class="test-content">
-    <h1 id="searchLabel">Try using the search bar!</h1>
-    <p id="searchValue"></p>
-    <form name="searchDemo" onsubmit="event.preventDefault();updateSearchBar();">
+    <div role="status">
+      <h1 id="searchLabel">Try using the search bar!</h1>
+      <p id="searchValue"></p>
+    </div>
+    <form name="searchDemo">
       <div class="form-control">
         <label for="searchPlaceholder">Search box placeholder:</label>
         <input id="searchPlaceholder" type="text" placeholder="Search MyUW">
@@ -190,7 +171,7 @@
         <label for="searchIcon">Material icon:</label>
         <input id="searchIcon" type="text" placeholder="search">
       </div>
-      <button>Update search component</button>
+      <button id="update-search-btn">Update search component</button>
     </form>
   </div>
 </div>
