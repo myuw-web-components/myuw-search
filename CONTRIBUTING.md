@@ -1,24 +1,31 @@
 # Contributing
 
-When contributing to this repository, please first discuss the change you wish to make via issue,
-email, in person, or any other method with the owners of this repository before making a change.
+When contributing to this repository, please first discuss the change you wish
+to make via issue, email, in person, or any other method with the owners of this
+repository before making a change.
 
-Please note we have a code of conduct, please follow it in all your interactions with the project.
+Please note we have a code of conduct, please follow it in all your interactions
+with the project.
 
 ## Pull Request Process
 
 1. Ensure any build or configuration artifacts are removed before submission
-2. Increase the version number to the new version that this Pull Request would represent.
+2. Increase the version number to the new version that this Pull Request would
+  represent.
 3. Update the README.md with relevant details of the change.
-   variables, exposed ports, etc.
-   The versioning scheme we use is [SemVer](http://semver.org/).
-4. Open a pull request from your fork to the upstream master branch.  Include 'WIP' in the title
-   if the changeset is not yet ready to merge and use in production settings.  Remove it once finalized.
-5. Squash commits to the smallest meaningful number of revisions.  Do not include merge commits.
-6. Fully test the change—collaborating with maintainers as necessary—before merging the pull request.
-7. You may merge the Pull Request in once you feel comfortable with it and have the sign-off of at
-   least one other developer, or if you do not have permission to do that, you may request the
-   reviewer to merge it for you.
+  variables, exposed ports, etc.
+  The versioning scheme we use is [SemVer](http://semver.org/).
+4. Open a pull request from your fork to the upstream master branch.  Include
+  'WIP' in the title if the changeset is not yet ready to merge and use in
+  production settings.
+  Remove it once finalized.
+5. Squash commits to the smallest meaningful number of revisions.
+  Do not include merge commits.
+6. Fully test the change—collaborating with maintainers as necessary—before
+  merging the pull request.
+7. You may merge the Pull Request in once you feel comfortable with it and have
+  the sign-off of at least one other developer, or if you do not have permission
+  to do that, you may request the reviewer to merge it for you.
 
 ## Code of Conduct
 
@@ -27,9 +34,9 @@ Please note we have a code of conduct, please follow it in all your interactions
 In the interest of fostering an open and welcoming environment, we as
 contributors and maintainers pledge to making participation in our project and
 our community a harassment-free experience for everyone, regardless of age, body
-size, disability, ethnicity, gender identity and expression, level of experience,
-nationality, personal appearance, race, religion, or sexual identity and
-orientation.
+size, disability, ethnicity, gender identity and expression, level of
+experience, nationality, personal appearance, race, religion, or sexual identity
+and orientation.
 
 ### Our Standards
 
@@ -80,8 +87,9 @@ Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported by contacting the project team by [email][email]. All
 complaints will be reviewed and investigated and will result in a response that
 is deemed necessary and appropriate to the circumstances. The project team is
-obligated to maintain confidentiality with regard to the reporter of an incident.
-Further details of specific enforcement policies may be posted separately.
+obligated to maintain confidentiality with regard to the reporter of an
+incident. Further details of specific enforcement policies may be posted
+separately.
 
 Project maintainers who do not follow or enforce the Code of Conduct in good
 faith may face temporary or permanent repercussions as determined by other
@@ -89,8 +97,8 @@ members of the project's leadership.
 
 ### Attribution
 
-This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 1.4,
-available at [http://contributor-covenant.org/version/1/4][version]
+This Code of Conduct is adapted from the [Contributor Covenant][homepage],
+version 1.4, available at [http://contributor-covenant.org/version/1/4][version]
 
 [email]: mailto:info@my.wisc.edu
 [homepage]: http://contributor-covenant.org
