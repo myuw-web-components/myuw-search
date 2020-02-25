@@ -9,6 +9,13 @@ you're open to discussion from there.
 Please note we have a code of conduct, please follow it in all your interactions
 with the project.
 
+**All of the technical guidance here is on a try-your-best basis.**
+All anyone can ask is that you try your best. Definitely do not let code
+formatting or organizing your commits just so or questions about Semantic
+Versioning or anything else be a barrier to contributing. Maintainers can help
+you work through all of that and more in collaborating on your contribution,
+and if need be can post-process contributions to smooth out rough edges.
+
 ## Pull Request Process
 
 1. Ensure any build or configuration artifacts are removed before submission
