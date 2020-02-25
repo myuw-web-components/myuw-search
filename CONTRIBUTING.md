@@ -16,10 +16,11 @@ with the project.
   represent. This product uses [SemVer](http://semver.org/).
 3. Update the README.md with relevant details of the change.
   variables, exposed ports, etc.
-4. Open a pull request from your fork to the upstream master branch.  Include
-  'WIP' in the title if the changeset is not yet ready to merge and use in
-  production settings.
-  Remove it once finalized.
+4. Open a pull request from your fork to the upstream master branch.
+  Communicate that the Pull Request is a work-in-progress if it is not yet ready
+  to merge and use in production settings, by using
+  [GitHub's draft Pull Requests feature][] or prepending "WIP: " to the Pull
+  Request title.
 5. Squash commits to the smallest meaningful number of revisions.
   Do not include merge commits.
 6. Fully test the change—collaborating with maintainers as necessary—before
@@ -104,3 +105,5 @@ version 1.4, available at [http://contributor-covenant.org/version/1/4][version]
 [email]: mailto:info@my.wisc.edu
 [homepage]: http://contributor-covenant.org
 [version]: http://contributor-covenant.org/version/1/4/
+
+[GitHub's draft Pull Requests feature]: https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests#draft-pull-requests
