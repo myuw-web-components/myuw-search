@@ -1,8 +1,10 @@
 # Contributing
 
-When contributing to this repository, please first discuss the change you wish
-to make via issue, email, in person, or any other method with the owners of this
-repository before making a change.
+When contributing to this repository, consider first discussing the change you
+wish to make via issue, email, in person, or any other method with the owners of
+this repository before making a change. That said, sometimes a Pull Request is
+the most effective way to communicate an idea and it's fine to lead with a Pull
+Request so long as you're open to discussion from there.
 
 Please note we have a code of conduct, please follow it in all your interactions
 with the project.
