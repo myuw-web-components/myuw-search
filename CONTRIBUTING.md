@@ -13,10 +13,9 @@ with the project.
 
 1. Ensure any build or configuration artifacts are removed before submission
 2. Increase the version number to the new version that this Pull Request would
-  represent.
+  represent. This product uses [SemVer](http://semver.org/).
 3. Update the README.md with relevant details of the change.
   variables, exposed ports, etc.
-  The versioning scheme we use is [SemVer](http://semver.org/).
 4. Open a pull request from your fork to the upstream master branch.  Include
   'WIP' in the title if the changeset is not yet ready to merge and use in
   production settings.
