@@ -175,8 +175,10 @@
 
 <div class="demo__container">
   <div class="test-content">
-    <h1 id="searchLabel">Try using the search bar!</h1>
-    <p id="searchValue"></p>
+    <div role="status">
+      <h1 id="searchLabel">Try using the search bar!</h1>
+      <p id="searchValue"></p>
+    </div>
     <form name="searchDemo" onsubmit="event.preventDefault();updateSearchBar();">
       <div class="form-control">
         <label for="searchPlaceholder">Search box placeholder:</label>
