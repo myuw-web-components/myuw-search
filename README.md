@@ -12,6 +12,7 @@ Include the component as follows:
 <script nomodule src="https://cdn.my.wisc.edu/@myuw-web-components/myuw-search@latest/myuw-search.min.js"></script>
 
 <myuw-search
+  slot="myuw-search"
   input-label="Search MyUW"
   button-label="Submit search"
   icon="search"
