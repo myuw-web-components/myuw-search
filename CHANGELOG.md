@@ -1,5 +1,11 @@
 # myuw-search versions
 
+## 1.5.0
+
+* Added role='search' to the search form
+* Added aria-live="assertive" to announce searched activity
+* Added mobile style for search input
+
 ## 1.3.1
 
 * Added more components to local demo to test mobile search positioning 
