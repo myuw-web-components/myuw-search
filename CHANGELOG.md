@@ -1,5 +1,11 @@
 # myuw-search versions
 
+## 1.5.1
+
+* Added default aria-disabled to Submit Search button
+* Added click event listeners for search input
+* Inform assistive technologies users when submitting empty search form and when searching begins by adjusting aria-live="assertive"
+
 ## 1.5.0
 
 * Added role='search' to the search form
