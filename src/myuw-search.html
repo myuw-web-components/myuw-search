@@ -74,6 +74,26 @@
     #icon {
         color: #333;
     }
+
+   .visually-hidden {
+      position: absolute !important;
+      overflow: hidden;
+      height: 1px;
+      width: 1px;
+      word-wrap: normal;
+    }
+
+    button[disabled],
+    button[aria-disabled=true] {
+      background-color: #f3f3f3 !important;
+      pointer-events: none;
+    }
+
+    button[disabled],
+    button[aria-disabled=true] #icon{
+      opacity: 0.5;
+    }
+
     @media screen, \0 all, \\0 screen {
       @media (max-width: 600px) {
         :host,
@@ -174,7 +194,8 @@
         <i id='iconToggle' class='material-icons'></i>
     </button>
     <input id='input' name='myuw-search-input' aria-label='' type='text' placeholder=''/>
-    <button id='submit' aria-label='' type='submit' aria-live="assertive">
+    <button aria-disabled="true" id='submit' aria-label='' type='submit'>
         <i id='icon' class='material-icons'></i>
     </button>
+    <p class="visually-hidden" aria-live="assertive"></p>
 </form>

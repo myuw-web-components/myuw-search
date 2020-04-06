@@ -47,7 +47,8 @@ export class MyUWSearch extends HTMLElement {
         this.$button        = this.shadowRoot.querySelector('button#submit');
         this.$toggle        = this.shadowRoot.querySelector('button#toggle');
         this.$toggleIcon    = this.shadowRoot.querySelector('i#iconToggle');
-        
+        this.nonVisualHint  = this.shadowRoot.querySelector('.visually-hidden');
+
         // Set icon and label values
         this.$icon.innerText = this.icon;
         this.$toggleIcon.innerText = this.icon;
@@ -59,6 +60,15 @@ export class MyUWSearch extends HTMLElement {
         // Get viewport width and toggle button position
         // this.$cssWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
         // this.$togglePosition = this.$toggle.getBoundingClientRect();
+
+        // Add click event listeners for search input text
+        this.$input.addEventListener('keyup', e => {
+          if (this.$input.value.length > 0) {
+            this.$button.setAttribute('aria-disabled', 'false');
+          } else {
+            this.$button.setAttribute('aria-disabled', 'true');
+          }
+        });
 
         // Add click event listeners for submit and toggle buttons
         this.$button.addEventListener('click', e => {
@@ -117,6 +127,13 @@ export class MyUWSearch extends HTMLElement {
     submitSearch(event) {
         event.preventDefault();
         event.stopPropagation();
+
+        // Add assistive technologies hint message when submitting search request
+        if (this.$input.value.length > 0) {
+            this.nonVisualHint.innerHTML = 'Searching for ' + this.$input.value;
+          } else {
+            this.nonVisualHint.innerHTML = 'Search field is empty.';
+          }
 
         // Using `callback` property:
         if (this.callback && typeof this.callback === 'function') {
