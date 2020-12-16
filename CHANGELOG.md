@@ -1,5 +1,9 @@
 # myuw-search versions
 
+## 1.5.2
+
+* Fix misaligned position of the icon on mobile views and strengthen the contrast between the background and foreground on hover effect
+
 ## 1.5.1
 
 * Added default aria-disabled to Submit Search button
