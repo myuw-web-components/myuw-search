@@ -1,5 +1,10 @@
 # myuw-search versions
 
+## 1.5.3
+
+* Update web Components imports to use unpkg rather than cdn.my.
+* Update position of search icon on mobile view
+
 ## 1.5.2
 
 * Fix misaligned position of the icon on mobile views and strengthen the contrast between the background and foreground on hover effect
