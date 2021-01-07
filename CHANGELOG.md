@@ -1,5 +1,9 @@
 # myuw-search versions
 
+## 1.5.4
+
+* Adjustments to the position of the Search icon on mobile views
+
 ## 1.5.3
 
 * Update web Components imports to use unpkg rather than cdn.my.
