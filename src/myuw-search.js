@@ -55,7 +55,6 @@ export class MyUWSearch extends HTMLElement {
         this.$input.setAttribute('aria-label', this.inputLabel);
         this.$input.setAttribute('placeholder', this.inputLabel);
         this.$button.setAttribute('aria-label', this.buttonLabel);
-        this.$toggle.setAttribute('aria-label', 'show search');
 
         // Get viewport width and toggle button position
         // this.$cssWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
@@ -73,6 +72,9 @@ export class MyUWSearch extends HTMLElement {
         // Add click event listeners for submit and toggle buttons
         this.$button.addEventListener('click', e => {
             this.submitSearch(e);
+            if (this.$form.hasAttribute('expanded')) {
+               this.toggleSearch(e);
+            }
         });
         
         this.$toggle.addEventListener('click', e => {
@@ -103,12 +105,12 @@ export class MyUWSearch extends HTMLElement {
         switch (attribute) {
             case 'input-label':
                 if (this.$input) {
-                    this.$input.setAttribute('placeholder', value);    
+                    this.$input.setAttribute('placeholder', value);
                 }
                 break;
             case 'button-label':
                 if (this.$button) {
-                    this.$button.setAttribute('aria-label', value);    
+                    this.$button.setAttribute('aria-label', value);
                 }
                 break;
             case 'icon':
@@ -156,10 +158,10 @@ export class MyUWSearch extends HTMLElement {
     toggleSearch(event) {
         // Get viewport width and position of toggle button
         this.$cssWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-        this.$togglePosition = this.$toggle.getBoundingClientRect();
-
+//        this.$togglePosition = this.$toggle.getBoundingClientRect();
+         this.$submitPosition = this.$button.getBoundingClientRect(); //newline
         // Get value for 'right' positioning of form anchor (minus width of button)
-        var right = Math.floor(this.$cssWidth - this.$togglePosition.left - 42);
+        var right = Math.floor(this.$cssWidth - this.$submitPosition.left - 42);
 
         // Set positioning
         this.$form.style.right = right;
@@ -167,12 +169,12 @@ export class MyUWSearch extends HTMLElement {
         // Set icon for toggle button and expand form
         if (this.$form.hasAttribute('expanded')) {
             this.$form.removeAttribute('expanded');
-            this.$toggleIcon.innerText = this.icon;
-            this.$toggle.setAttribute('aria-label', 'show search');
+            this.$icon.innerText = this.icon;
+            this.$toggle.setAttribute('class', '');
         } else {
             this.$form.setAttribute('expanded', 'true');
-            this.$toggleIcon.innerText = 'arrow_forward';
-            this.$toggle.setAttribute('aria-label', 'close search');
+            this.$toggle.setAttribute('class', 'hiddenElement');
+            this.$icon.innerText = 'arrow_forward';
         }
     }
 }

@@ -1,5 +1,10 @@
 # myuw-search versions
 
+## 1.5.5
+
+* Fix failing form submission on mobile
+* Accessibility fix: add focus style on search button
+
 ## 1.5.4
 
 * Adjustments to the position of the Search icon on mobile views

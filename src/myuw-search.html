@@ -83,6 +83,10 @@
       word-wrap: normal;
     }
 
+    .hiddenElement {
+      display: none !important;
+    }
+
     button[disabled],
     button[aria-disabled=true] {
       background-color: #f3f3f3 !important;
@@ -100,14 +104,15 @@
         myuw-search {
             border: none;
         }
+        #submit {
+          display:none;
+        }
         #form {
             justify-content: flex-end;
             padding: 0;
             align-items: center;
         }
-        #submit {
-            display: none;
-        }
+
         #input {
             width: 0;
             max-width: 0;
@@ -119,6 +124,7 @@
             opacity: 0;
             transition: opacity .4s cubic-bezier(.25, .8, .25, 1);
         }
+
         #toggle {
             display: flex;
             transition: background 0.2s cubic-bezier(.25, .8, .25, 1);
@@ -134,10 +140,15 @@
             cursor: pointer;
             outline: none;
             justify-content: center;
-
         }
+
         #toggle:hover {
             background: rgba(0, 0, 0, 0.2);
+        }
+
+        #toggle:focus {
+            outline: 2px solid #5e9ed6;
+            outline: -webkit-focus-ring-color auto 5px;
         }
 
         #iconToggle {
@@ -172,30 +183,38 @@
             max-width: none;
             padding: 0 16px;
         }
-        #form[expanded] #toggle {
+         #form[expanded] #submit {
+            display: block;
             position: absolute;
             right: 0;
-            margin: 0 6px;
             background: transparent;
+            height: 100%;
         }
-        #form[expanded] #toggle:hover {
+        #form[expanded] #submit:hover {
             background: rgba(0,0,0,0.12);
             opacity: 1;
         }
-        #form[expanded] #iconToggle {
+        #form[expanded] #icon {
             color: #000;
             background: transparent;
+            top: 16px;
         }
     }
   }
 </style>
 <form id='form' role='search' class='myuw-search-container' onsubmit='$event.preventDefault(); submitSearch($event)'>
-    <button id='toggle' aria-label='' type='button'>
+
+    <!-- Mobile button to toggle search input -->
+    <button id='toggle' aria-label='Show search input' type='button'>
         <i id='iconToggle' class='material-icons'></i>
     </button>
+
     <input id='input' name='myuw-search-input' aria-label='' type='text' placeholder=''/>
+
+    <!-- Submit search form button -->
     <button aria-disabled="true" id='submit' aria-label='' type='submit'>
         <i id='icon' class='material-icons'></i>
     </button>
+
     <p class="visually-hidden" aria-live="assertive"></p>
 </form>
