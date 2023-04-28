@@ -1,5 +1,10 @@
 # myuw-search versions
 
+
+## 1.5.6
+
+* Update search input font from 1rem to fixed value of 16px
+
 ## 1.5.5
 
 * Fix failing form submission on mobile
