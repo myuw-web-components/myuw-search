@@ -1,5 +1,9 @@
 # myuw-search versions
 
+## 1.5.7
+
+* Remove references to Roboto and Arial fonts and replaced with Red Hat
+* Use svg version of the search icon
 
 ## 1.5.6
 
@@ -37,7 +41,7 @@
 
 ## 1.3.1
 
-* Added more components to local demo to test mobile search positioning 
+* Added more components to local demo to test mobile search positioning
 
 ## 1.3.0
 
@@ -49,7 +53,7 @@
 
 ## 1.2.3
 
-### Added 
+### Added
 
 * Responsive theming support
 
