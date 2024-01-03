@@ -42,11 +42,11 @@ export class MyUWSearch extends HTMLElement {
 
         // Get elements to update
         this.$form          = this.shadowRoot.querySelector('form#form');
-        this.$icon          = this.shadowRoot.querySelector('i#icon');
+        this.$icon          = this.shadowRoot.querySelector('svg#icon');
         this.$input         = this.shadowRoot.querySelector('input#input');
         this.$button        = this.shadowRoot.querySelector('button#submit');
         this.$toggle        = this.shadowRoot.querySelector('button#toggle');
-        this.$toggleIcon    = this.shadowRoot.querySelector('i#iconToggle');
+        this.$toggleIcon    = this.shadowRoot.querySelector('svg#iconToggle');
         this.nonVisualHint  = this.shadowRoot.querySelector('.visually-hidden');
 
         // Set icon and label values
@@ -76,7 +76,7 @@ export class MyUWSearch extends HTMLElement {
                this.toggleSearch(e);
             }
         });
-        
+
         this.$toggle.addEventListener('click', e => {
             this.toggleSearch(e);
         });
@@ -99,7 +99,7 @@ export class MyUWSearch extends HTMLElement {
     }
 
     /**
-    *   Update the component state 
+    *   Update the component state
     */
     updateComponent(attribute, value) {
         switch (attribute) {
