@@ -1,5 +1,9 @@
 # myuw-search versions
 
+## 1.5.8
+
+* Ensure search mechanism works with svg icon
+
 ## 1.5.7
 
 * Remove references to Roboto and Arial fonts and replaced with Red Hat
