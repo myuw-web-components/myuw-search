@@ -1,5 +1,9 @@
 # myuw-search versions
 
+## 1.5.9
+
+* Ensure search input uses Red Hat Text font
+
 ## 1.5.8
 
 * Ensure search mechanism works with svg icon
