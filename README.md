@@ -1,5 +1,7 @@
 # `<myuw-search>`
 
+**`myuw-search` is not currently maintained.**
+
 ## Getting Started
 
 Include the component as follows:
